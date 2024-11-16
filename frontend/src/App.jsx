@@ -33,7 +33,7 @@ const App = () => {
   useEffect(() => {
     if(authUser){
       
-      const socket = io(`${process.env.NEXT_PUBLIC_BASE_URL}`,{
+      const socket = io(`${import.meta.env.VITE_API_URL}`,{
         query:{
           userId:authUser._id
         }

@@ -11,7 +11,7 @@ const useGetMessages = () => {
         const fetchMessages = async () => {
             try {
                 axios.defaults.withCredentials = true;
-                const res = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/message/${selectedUser?._id}`);
+                const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/v1/message/${selectedUser?._id}`);
                 dispatch(setMessages(res.data))
             } catch (error) {
                 console.log(error);
