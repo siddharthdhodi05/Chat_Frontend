@@ -29,10 +29,11 @@ const App = () => {
   const {socket} = useSelector(store=>store.socket)
 
   const dispatch = useDispatch();
-
+   console.log(import.meta.env.VITE_API_URL);
+   
   useEffect(() => {
     if(authUser){
-      
+       
       const socket = io(`${import.meta.env.VITE_API_URL}`,{
         query:{
           userId:authUser._id
