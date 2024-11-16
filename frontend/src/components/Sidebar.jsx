@@ -14,7 +14,7 @@ const Sidebar = () => {
   const dispatch = useDispatch();
   const logoutHandler = async () => {
     try {
-      const res = await axios.get("http://localhost:8080/api/v1/user/logout");
+      const res = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/api/v1/user/logout`);
       navigate("/login");
       toast.success(res.data.message);
       dispatch(setAuthuser(null))

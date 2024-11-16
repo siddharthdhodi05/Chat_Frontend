@@ -33,7 +33,7 @@ const App = () => {
   useEffect(() => {
     if(authUser){
       
-      const socket = io("http://localhost:8080",{
+      const socket = io(`${process.env.NEXT_PUBLIC_BASE_URL}`,{
         query:{
           userId:authUser._id
         }
